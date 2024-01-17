@@ -1,0 +1,40 @@
+CREATE DATABASE IF NOT EXISTS people_education;
+
+SHOW DATABASES;
+USE people_education;
+
+CREATE TABLE IF NOT EXISTS people_info (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255),
+    age INT,
+    high_school_attended VARCHAR(255),
+    height FLOAT
+);
+
+CREATE TABLE IF NOT EXISTS school_info (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    school_name VARCHAR(255),
+    zip_code VARCHAR(10)
+);
+
+CREATE TABLE IF NOT EXISTS school_mascot (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    school_name VARCHAR(255),
+    school_mascot VARCHAR(255)
+);
+
+SHOW TABLES;
+
+DROP TABLE IF EXISTS school_mascot;
+
+INSERT INTO people_info (name, age, high_school_attended, height) VALUES
+    ('John Doe', 25, 'High School A', 1.75),
+    ('Jane Smith', 22, 'High School B', 1.65),
+    ('Bob Johnson', 28, 'High School C', 1.80),
+    ('Alice Brown', 21, 'High School D', 1.70);
+
+INSERT INTO school_info (school_name, zip_code) VALUES
+    ('High School A', '12345'),
+    ('High School B', '23456'),
+    ('High School C', '34567'),
+    ('High School D', '45678');
